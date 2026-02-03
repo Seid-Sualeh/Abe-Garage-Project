@@ -1,0 +1,16 @@
+{
+  "name": "Abe Garage App",
+  "short_name": "Abe Garage",
+  "description": "Your personal garage management solution",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
+  "icons": [
+    {
+      "src": "/vite.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

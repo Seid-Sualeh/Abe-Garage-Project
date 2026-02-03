@@ -1,0 +1,97 @@
+.order-status-page {
+  font-family: 'Arial', sans-serif;
+  color: #333;
+  padding: 20px;
+   background: url('https://images.unsplash.com/photo-1515569067071-ec3b51335dd0?q=80&w=2738&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat center center fixed;
+  background-size: cover;
+}
+
+.progress-overlay {
+  position: relative;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.progress-card {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.progress-bar-container {
+  margin: 20px 0;
+  height: 30px;
+  background: #e0e0e0;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  background: #4caf50;
+  color: #ffffff;
+  text-align: center;
+  line-height: 30px;
+  font-weight: bold;
+  border-radius: 15px;
+  transition: width 0.3s ease;
+}
+
+.order-details-card {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  max-width: 800px;
+  margin: 20px auto;
+}
+
+.details-header h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #333;
+}
+
+.order-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.details-info {
+  width: 65%;
+}
+
+.details-image {
+  width: 30%;
+  text-align: center;
+}
+
+.details-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.details-list p {
+  margin: 5px 0;
+}
+
+@media (max-width: 768px) {
+  .order-content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .details-image {
+    margin-top: 20px;
+    width: 100%;
+  }
+}
