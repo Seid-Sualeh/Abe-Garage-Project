@@ -10,7 +10,7 @@ import "./assets/styles/custom.css";
 // Import the pages
 import Home from "./markup/pages/MainPge/HomePage/Home";
 import About from "./markup/pages/MainPge/Aboutpage/AboutPage";
-import Service from "./markup/pages/MainPge/ServicePge/Services";
+import Service from "./markup/pages/MainPge/ServicePage/Services";
 import Contact from "./markup/pages/MainPge/ContactPage/Contact";
 import AdminDashboard from "./markup/pages/admin/Admin/AdminDashboard";
 import AddEmployee from "./markup/pages/admin/Employee/AddEmployee";
