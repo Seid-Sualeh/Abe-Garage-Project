@@ -1,0 +1,218 @@
+.create-order-container {
+  padding: 2rem;
+  background-color: #f6f7fa;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px;
+  font-size: medium;
+  text-align: left;
+}
+.create-order-container h1 {
+  font-size: 30px;
+  margin-bottom: 30px;
+}
+
+.create-order-container label {
+  color: #222b48;
+  font-size: 20px;
+  font-weight: 1000;
+}
+.create-order-container p {
+  font-weight: 300;
+}
+
+.CustomerInfo,
+.VehicleInfo,
+.servicesSection,
+.additional-requests {
+  margin-bottom: 2rem;
+  padding: 1rem;
+  background-color: #fff;
+  /* border-radius: 4px; */
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  text-align: left;
+}
+
+.CustomerInfo h2,
+.VehicleInfo h2,
+.additional-requests h2 {
+  font-size: 20px;
+}
+.additional-requests h2 {
+  margin-left: 10px;
+}
+.CustomerInfo p,
+.VehicleInfo p {
+  padding-bottom: 0%;
+  font-size: 10px;
+}
+
+.serviceRequest {
+  display: block;
+  margin: 30px 10px 10px 10px;
+  width: 80%;
+  height: 100px;
+  border: 1.3px solid rgba(223, 217, 217, 0.884);
+  /* box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1); */
+}
+.serviceRequest input{
+  padding: 5px 0;
+}
+input::placeholder {
+  color: #ddd7d7;
+}
+.price {
+  display: block;
+  width: 80%;
+  margin: 20px 10px 20px 10px;
+  border: 1.3px solid rgba(223, 217, 217, 0.884);
+  /* box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1); */
+}
+.servicesSection {
+  display: flex;
+  flex-direction: column;
+  /* margin-right: 5px; */
+}
+.servicesSection h2 {
+  font-size: 25px;
+}
+.service-item {
+  margin: 0px 6px 0px 10px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  margin-right: 30px;
+  align-items: center;
+}
+.service-item label {
+  font-size: 15px;
+  font-weight: bolder;
+}
+.service-item p {
+  font-weight: 300;
+  font-size: 12px;
+}
+
+/* ************************ */
+.service-d{
+  display: flex;
+  justify-content: space-between;
+}
+
+.submit-order {
+  display: block;
+  /* width: 33%; */
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  background-color: #ff1500;
+  border: none;
+  /* border-radius: 4px; */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  /* margin-left: 30x; */
+}
+
+.submit-order:hover {
+  background-color: #0056b3;
+}
+.submit {
+  margin-left: 10px;
+}
+.VehicleInfo p {
+  display: flex;
+  /* justify-content: space-between; */
+}
+
+.VehicleInfo .label {
+  color: #0f3fba; /* Set the color for the text before the colon */
+}
+
+.VehicleInfo .value {
+  color: #333; /* Set the color for the text after the colon */
+}
+
+.CustomerInfo p {
+  display: flex;
+  /* justify-content: space-between; */
+}
+
+.CustomerInfo .label,
+.VehicleInfo .label {
+  font-size: 15px;
+  font-weight: 400;
+  color: #05010c;
+}
+
+.CustomerInfo .value,
+.VehicleInfo .value {
+  font-size: 13px;
+  font-weight: 300;
+  color: black;
+}
+/* additional-requests h2  */
+.CustomerInfo h2 {
+  display: flex;
+  justify-content: flex-start;
+  gap: 4px;
+}
+.VehicleInfo h2 {
+  display: flex;
+  justify-content: space-between;
+}
+
+.CustomerInfo_two{
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.CustomerInfo p,
+.VehicleInfo p {
+  margin-bottom: 3px; /* Adjust the value to your desired spacing */
+}
+.icon {
+  color: #ff1500;
+  position: static;
+}
+.icon:hover {
+  color: rgb(157, 27, 27);
+  cursor: pointer;
+}
+/* .cancelicon {
+  align-items: flex-end;
+} */
+
+
+.service_list_container{
+  margin-bottom: 2rem;
+  padding: 1rem;
+  background-color: #fff;
+  /* border-radius: 4px; */
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+.notification {
+  font-size: 20px;
+  width: 250px;
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+}
+.notification_main {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+.notification button{
+background-color: green;
+padding: 10px;
+}
