@@ -1,0 +1,111 @@
+.order-detail-container {
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.order-detail-card {
+  background: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  border-radius: 6px;
+}
+
+.status-box-inline,
+.status-box {
+  padding: 5px 10px;
+  border-radius: 4px;
+  color: #fff;
+  display: inline-block;
+  margin-bottom: 15px;
+}
+
+.status-in-progress {
+  background-color: #f0ad4e;
+}
+
+.status-completed {
+  background-color: #5cb85c;
+}
+
+.status-received {
+  background-color: #5bc0de;
+}
+
+.overall-status-completed {
+  background-color: #5cb85c;
+}
+
+.overall-status-in-progress {
+  background-color: #f0ad4e;
+}
+
+.overall-status-received {
+  background-color: #5bc0de;
+}
+
+.sec-title {
+  margin-bottom: 20px;
+}
+
+.sec-title .text {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #666;
+}
+
+/* .row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.col-lg-6 {
+  flex: 1;
+  max-width: 50%;
+  padding: 10px;
+} */
+
+.service-block-one {
+  background: #f8f8f8;
+  padding: 20px;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.inner-boxx {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 20px;
+  background-color: white;
+}
+
+.order_details {
+  margin-top: 20px;
+}
+
+.order_detail_items {
+  margin-bottom: 15px;
+}
+
+.requested_service {
+  background: #f1f1f1;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+.red-bottom-border {
+  border-bottom: 2px solid red;
+  padding-bottom: 10px;
+}
+
+.overallstatus {
+  color: white;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+  .col-lg-6 {
+    padding: 10px;
+  }
+}
