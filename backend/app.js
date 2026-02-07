@@ -7,13 +7,20 @@ dotenv.config();
 const cors = require("cors");
 //import database sanitizer
 const sanitize = require("sanitize");
-//get port from .env file
-const port = process.env.PORT;
-//allow CORS for the frontend URL
+
+//get port from .env file (default to 3001 for local, Vercel will set port)
+const port = process.env.PORT || 3001;
+
+//allow CORS for the frontend URL (support both local and Vercel deployments)
+const frontendUrl =
+  process.env.FRONTEND_URL || process.env.VERCEL_URL
+    ? `https://${process.env.VERCEL_URL}`
+    : "http://localhost:5173";
 const corsOptions = {
-  origin: process.env.FRONTEND_URL,
+  origin: [frontendUrl, process.env.APP_URL].filter(Boolean),
   optionsSuccessStatus: 200,
 };
+
 //import routes
 const router = require("./routes/index");
 //create web server
@@ -27,9 +34,14 @@ app.use(router);
 
 // Middleware to sanitize input
 app.use(sanitize.middleware);
-//start server
-app.listen(port, () => {
-  console.log(`Server is running on port ${port}`);
-});
-//export app
+
+// Only start server if not in Vercel environment (VERCEL=1 indicates Vercel runtime)
+if (!process.env.VERCEL) {
+  //start server
+  app.listen(port, () => {
+    console.log(`Server is running on port ${port}`);
+  });
+}
+
+//export app for Vercel serverless functions
 module.exports = app;
