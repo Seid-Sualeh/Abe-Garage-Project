@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./orderDetail.css";
 import { useParams } from "react-router-dom";
-import ordersService from "../../../../pages/servicesAPI/order.service";
+import ordersService from "../../../pages/servicesAPI/order.service";
 import { useAuth } from "../../../../context/Auth";
 
 const OrderDetail = () => {

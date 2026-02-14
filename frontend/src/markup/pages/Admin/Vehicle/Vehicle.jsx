@@ -5,7 +5,7 @@ import EditCalendarOutlinedIcon from "@mui/icons-material/EditCalendarOutlined";
 import { MdBorderClear } from "react-icons/md";
 import zIndex from "@mui/material/styles/zIndex";
 import { useParams, Link } from "react-router-dom";
-import customerService from "../../../../pages/servicesAPI/customer.service";
+import customerService from "../../servicesAPI/customer.service";
 import { useAuth } from "../../../../context/Auth";
 import { LiaEdit } from "react-icons/lia";
 import { FiExternalLink } from "react-icons/fi";

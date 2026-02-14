@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { useAuth } from "../../../../context/Auth";
-import vehicleService from "../../../../pages/servicesAPI/vehicle.service";
+import { useAuth } from "../../../../../context/Auth";
+import vehicleService from "../../../../../pages/servicesAPI/vehicle.service";
 import { useNavigate } from "react-router-dom";
 import { BeatLoader } from "react-spinners";
-import ErrorComponent from "../../../pages/Main/404/404";
+import ErrorComponent from "../../../../pages/MainPge/404Page/NotFound";
 
 const EditVehicleForm = ({ vid }) => {
   const vehicle_id = vid;

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { IoCloseSharp } from "react-icons/io5";
 import { useAuth } from "../../../../../context/Auth";
-import vehicleService from "../../../../pages/servicesAPI/vehicle.service";
+import vehicleService from "../../../../../pages/servicesAPI/vehicle.service";
 import { useNavigate } from "react-router-dom";
 // import { BeatLoader } from "react-spinners";
 

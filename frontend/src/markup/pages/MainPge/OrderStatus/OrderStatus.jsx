@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import "./OrderStatus.css";
-import orderService from "../../../../pages/servicesAPI/order.service";
+import orderService from "../../servicesAPI/order.service";
 import Loading from "../../../../assets/Loading/Loading";
-import img from "../../../../assets/images/side.jpg";
 
 const OrderStatus = () => {
   const { order_hash } = useParams();

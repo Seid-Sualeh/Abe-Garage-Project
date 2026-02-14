@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import CancelPresentationIcon from "@mui/icons-material/CancelPresentation";
 import { useAuth } from "../../../../context/Auth";
 import { useParams, Link, useNavigate } from "react-router-dom";
-import customerService from "../../../../pages/servicesAPI/customer.service"; // Import customerService
-import vehicleService from "../../../../pages/servicesAPI/vehicle.service"; // Import vehicleService
+import customerService from "../../../pages/servicesAPI/customer.service"; // Import customerService
+import vehicleService from "../../../pages/servicesAPI/vehicle.service"; // Import vehicleService
 import { BsHandIndexThumbFill } from "react-icons/bs";
 import { FaEdit } from "react-icons/fa";
 

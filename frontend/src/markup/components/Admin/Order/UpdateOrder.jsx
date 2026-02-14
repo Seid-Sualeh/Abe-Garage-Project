@@ -1,8 +1,8 @@
 import React, { useRef, useState, useEffect } from "react";
 import { BeatLoader } from "react-spinners";
 import { useParams, useNavigate, useLocation } from "react-router-dom";
-import ordersService from "../../../../pages/servicesAPI/order.service";
-import serviceService from "../../../../pages/servicesAPI/service.service";
+import ordersService from "../../../pages/servicesAPI/order.service";
+import serviceService from "../../../pages/servicesAPI/service.service";
 import "./CreateNewOrder.css";
 import { useAuth } from "../../../../context/Auth";
 
