@@ -1,3 +1,6 @@
+// Load environment variables first
+require("dotenv").config();
+
 const mysql = require("mysql2/promise");
 
 const dbconfig = {
@@ -8,16 +11,6 @@ const dbconfig = {
 };
 //create a connection pool
 const pool = mysql.createPool(dbconfig);
-//prepare a function that will execute the SQL queeries asynchronosly
-async function query(sql, params) {
-  try {
-    const [rows, fields] = await pool.execute(sql, params);
-    return rows;
-  } catch (error) {
-    console.error("Error executing MySQL query:", error);
-    throw error;
-  }
-}
 
 // Function to test the connection
 async function testConnection() {
@@ -27,7 +20,6 @@ async function testConnection() {
     connection.release();
   } catch (err) {
     console.error("Unable to connect to the database:", err.message);
-    process.exit(1); // Exit the process with a failure code
   }
 }
 
