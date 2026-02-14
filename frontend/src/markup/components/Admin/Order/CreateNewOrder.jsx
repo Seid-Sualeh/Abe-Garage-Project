@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate, Link } from "react-router-dom";
-import customerService from "../../../../pages/servicesAPI/customer.service";
-import vehicleService from "../../../../pages/servicesAPI/vehicle.service";
-import serviceService from "../../../../pages/servicesAPI/service.service";
+import customerService from "../../../pages/servicesAPI/customer.service";
+import vehicleService from "../../../pages/servicesAPI/vehicle.service";
+import serviceService from "../../../pages/servicesAPI/service.service";
 import "./CreateNewOrder.css";
 import CancelPresentationIcon from "@mui/icons-material/CancelPresentation";
 import EditCalendarOutlinedIcon from "@mui/icons-material/EditCalendarOutlined";
