@@ -3,6 +3,8 @@ require("dotenv").config();
 
 const mysql = require("mysql2/promise");
 
+
+
 // Database configuration optimized for Vercel serverless
 const dbconfig = {
   host: process.env.DB_HOST,
@@ -18,8 +20,32 @@ const dbconfig = {
   keepAliveInitialDelay: 0,
 };
 
+
+
 // Create a connection pool
 const pool = mysql.createPool(dbconfig);
+
+
+
+// Function to test database connection
+async function testConnection() {
+  try {
+    
+    const connection = await pool.getConnection();
+    console.log("✅ Database connected successfully!");
+    connection.release();
+    return true;
+  } catch (error) {
+    console.error("❌ Database connection failed:", error.message);
+    console.error("Error details:", error);
+    return false;
+  }
+}
+
+// Test connection immediately on module load
+testConnection().catch((err) => {
+  console.error("Initial connection test error:", err.message);
+});
 
 // Function to execute SQL queries asynchronously
 async function query(sql, params) {
@@ -39,4 +65,5 @@ async function query(sql, params) {
 module.exports = {
   query,
   pool,
+  testConnection,
 };
