@@ -20,7 +20,12 @@ if (process.env.FRONTEND_URL) {
 }
 
 const corsOptions = {
-  origin: ["http://localhost:5173", frontendUrl, process.env.APP_URL].filter(
+  origin: [
+    "http://localhost:5173",
+    frontendUrl,
+    process.env.APP_URL,
+    "https://seid-abe-garage.netlify.app",
+  ].filter(
     Boolean,
   ),
   optionsSuccessStatus: 200,
