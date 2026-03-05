@@ -2,6 +2,17 @@
 const express = require("express");
 //call the route method from express to create router
 const router = express.Router();
+
+// Root route - returns success message when backend is deployed
+router.get("/", (req, res) => {
+  res.status(200).json({
+    success: true,
+    message: "Abe Garage API is running successfully",
+    version: "1.0.0",
+    timestamp: new Date().toISOString(),
+  });
+});
+
 //import the install routes
 const installRouter = require("./install.routes");
 //import the employee routes

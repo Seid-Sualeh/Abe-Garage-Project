@@ -45,7 +45,7 @@ app.use(sanitize.middleware);
 if (!process.env.VERCEL) {
   //start server
   app.listen(port, () => {
-    console.log(`  Server is running on port ${port}`);
+    console.log(`✅   Server is running on port ${port}`);
   });
 }
 
