@@ -24,10 +24,8 @@ const corsOptions = {
     "http://localhost:5173",
     frontendUrl,
     process.env.APP_URL,
-    "https://seid-abe-garage.netlify.app",
-  ].filter(
-    Boolean,
-  ),
+    "https://seid-abe-garage-project.vercel.app",
+  ].filter(Boolean),
   optionsSuccessStatus: 200,
   credentials: true,
 };
