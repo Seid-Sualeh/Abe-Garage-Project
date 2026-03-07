@@ -11,21 +11,13 @@ const sanitize = require("sanitize");
 //get port from .env file (default to 5000 for local, Vercel will set port)
 const port = process.env.PORT || 5000;
 
-//allow CORS for the frontend URL (support both local and Vercel deployments)
-let frontendUrl = "http://localhost:5173";
-if (process.env.FRONTEND_URL) {
-  frontendUrl = process.env.FRONTEND_URL;
-} else if (process.env.VERCEL_URL) {
-  frontendUrl = `https://${process.env.VERCEL_URL}`;
-}
-
+// CORS allowed origins
 const corsOptions = {
   origin: [
     "http://localhost:5173",
-    frontendUrl,
-    process.env.APP_URL,
     "https://seid-abe-garage-project.vercel.app",
-  ].filter(Boolean),
+    "https://seid-abe-garage.netlify.app",
+  ],
   optionsSuccessStatus: 200,
   credentials: true,
 };
