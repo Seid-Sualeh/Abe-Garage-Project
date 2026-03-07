@@ -34,6 +34,7 @@ import NotFound from "./markup/pages/MainPge/404Page/NotFound";
 import Header from "./markup/components/MainComponents/Header/Header";
 import Footer from "./markup/components/MainComponents/Footer/Footer";
 import PrivateAuthRoute from "./markup/components/Auth/PrivateAuthRoute";
+import AIAssistant from "./markup/components/MainComponents/AIAssistant/AIAssistant";
 
 function App() {
   return (
@@ -157,6 +158,7 @@ function App() {
         <Route path="/unauthorized" element={<Unauthorized />} />
       </Routes>
       <Footer />
+      <AIAssistant />
     </>
   );
 }
