@@ -11,30 +11,53 @@ export default function AIAssistant() {
   const demoAccounts = [
     {
       role: "Admin",
+      roleId: 3,
       email: "admin@admin.com",
       password: "12345678",
       description: "Full access to all features including employee management",
       icon: "👑",
       color: "#dc3545",
       bgColor: "#fff5f5",
+      permissions: [
+        "Manage Employees",
+        "Manage Services",
+        "Manage Customers",
+        "Manage Orders",
+        "View Dashboard",
+      ],
     },
     {
       role: "Manager",
+      roleId: 2,
       email: "manager@manager.com",
       password: "12345678",
       description: "Can manage customers, orders, and view employees",
       icon: "💼",
       color: "#ffc107",
       bgColor: "#fff9e6",
+      permissions: [
+        "Add Customers",
+        "Manage Orders",
+        "Create Orders",
+        "View Employees",
+        "View Services",
+      ],
     },
     {
       role: "Employee",
+      roleId: 1,
       email: "employee@employee.com",
       password: "12345678",
       description: "Can view orders and manage customer services",
       icon: "👨‍💼",
       color: "#28a745",
       bgColor: "#f0fff4",
+      permissions: [
+        "View Orders",
+        "Create Orders",
+        "View Customers",
+        "View Vehicles",
+      ],
     },
   ];
 
@@ -224,6 +247,47 @@ export default function AIAssistant() {
                     </span>
                   </div>
                 </div>
+                {/* Permissions Section */}
+                <div
+                  style={{
+                    marginTop: "10px",
+                    padding: "8px",
+                    backgroundColor: "rgba(255,255,255,0.7)",
+                    borderRadius: "6px",
+                  }}
+                >
+                  <p
+                    style={{
+                      margin: "0 0 6px 0",
+                      fontSize: "10px",
+                      color: "#666",
+                      fontWeight: "600",
+                      textTransform: "uppercase",
+                    }}
+                  >
+                    ✓ Permissions:
+                  </p>
+                  <div
+                    style={{ display: "flex", flexWrap: "wrap", gap: "4px" }}
+                  >
+                    {account.permissions &&
+                      account.permissions.map((perm, idx) => (
+                        <span
+                          key={idx}
+                          style={{
+                            fontSize: "9px",
+                            padding: "2px 6px",
+                            backgroundColor: account.color + "20",
+                            color: account.color,
+                            borderRadius: "4px",
+                            fontWeight: "500",
+                          }}
+                        >
+                          {perm}
+                        </span>
+                      ))}
+                  </div>
+                </div>
                 <button
                   onClick={() => handleQuickLogin(account)}
                   disabled={isLoggingIn}
@@ -249,15 +313,20 @@ export default function AIAssistant() {
 
             <div
               style={{
-                backgroundColor: "#f8f9fa",
+                backgroundColor: "#e8f4fd",
                 borderRadius: "8px",
                 padding: "12px",
                 marginTop: "10px",
                 textAlign: "center",
+                border: "1px solid #b8daff"
               }}
             >
-              <p style={{ margin: 0, fontSize: "11px", color: "#888" }}>
-                💡 Tip: Each role has different permissions and dashboard views
+              <p style={{ margin: 0, fontSize: "11px", color: "#155724" }}>
+                <strong>🔐 Role-Based Access Control:</strong><br/>
+                <span style={{ fontSize: "10px" }}>
+                  Role 1 (Employee) → Role 2 (Manager) → Role 3 (Admin)<br/>
+                  Each level inherits permissions from the previous level
+                </span>
               </p>
             </div>
           </div>
