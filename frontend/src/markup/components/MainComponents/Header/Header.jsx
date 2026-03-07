@@ -6,17 +6,32 @@ import { Link, useLocation } from "react-router-dom";
 import logo from "../../../../assets/images/custom/logo.png";
 import { useAuth } from "../../../../context/Auth";
 import loginService from "../../../pages/servicesAPI/login.service";
+import { useState } from "react";
 
 export default function Header() {
   const { isLogged, setIsLogged, employee } = useAuth();
   const location = useLocation();
   const isAdmin = location.pathname.startsWith("/admin");
+  const [isOpen, setIsOpen] = useState(false);
+
+  // Close navbar when a link is clicked
+  const handleNavClick = () => {
+    setIsOpen(false);
+  };
+
+  // Toggle navbar function
+  const handleToggle = () => {
+    setIsOpen(!isOpen);
+  };
+
   // Logout function
   const logOut = () => {
     //set the logout function from login service
     loginService.logOut();
     //set isLogged to false
     setIsLogged(false);
+    // Close navbar on logout
+    setIsOpen(false);
   };
 
   return (
@@ -52,11 +67,16 @@ export default function Header() {
             </div>
           </div>
         </div>
-        <Navbar expand="lg" className="header-upper">
+        <Navbar
+          expand="lg"
+          className="header-upper"
+          expanded={isOpen}
+          onToggle={handleToggle}
+        >
           <Container>
             <div className="logo-box">
               <div className="logo">
-                <Link to="/">
+                <Link to="/" onClick={handleNavClick}>
                   <img src={logo} alt="Logo" />
                 </Link>
               </div>
@@ -64,28 +84,89 @@ export default function Header() {
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="me-auto">
-                <Nav.Link as={Link} to="/" className="black-link">
+                <Nav.Link
+                  as={Link}
+                  to="/"
+                  className="black-link"
+                  onClick={handleNavClick}
+                >
                   HOME
                 </Nav.Link>
-                <Nav.Link as={Link} to="/about" className="black-link">
+                <Nav.Link
+                  as={Link}
+                  to="/about"
+                  className="black-link"
+                  onClick={handleNavClick}
+                >
                   ABOUT US
                 </Nav.Link>
-                <Nav.Link as={Link} to="/services" className="black-link">
+                <Nav.Link
+                  as={Link}
+                  to="/services"
+                  className="black-link"
+                  onClick={handleNavClick}
+                >
                   SERVICES
                 </Nav.Link>
-                <Nav.Link as={Link} to="/contact" className="black-link">
+                <Nav.Link
+                  as={Link}
+                  to="/contact"
+                  className="black-link"
+                  onClick={handleNavClick}
+                >
                   CONTACT US
                 </Nav.Link>
-                {isAdmin && (
-                  <Nav.Link className="black-link admin-panel">ADMIN</Nav.Link>
+                {isLogged && (
+                  <Nav.Link
+                    as={Link}
+                    to="/admin"
+                    className="black-link admin-panel desktop-admin-link"
+                    onClick={handleNavClick}
+                  >
+                    ADMIN
+                  </Nav.Link>
+                )}
+                {/* Always show ADMIN link in mobile navbar */}
+                {isLogged && (
+                  <Nav.Link
+                    as={Link}
+                    to="/admin"
+                    className="black-link admin-panel mobile-admin-link"
+                    style={{ display: "none" }}
+                    onClick={handleNavClick}
+                  >
+                    ADMIN
+                  </Nav.Link>
+                )}
+                <span className="nav-separator">|</span>
+                {isLogged && (
+                  <Nav.Link
+                    as={Link}
+                    to="/"
+                    className="theme-btn btn-style-one logout-btn mobile-logout-link"
+                    onClick={(e) => {
+                      logOut();
+                      handleNavClick();
+                    }}
+                  >
+                    LOG OUT
+                  </Nav.Link>
+                )}
+                {!isLogged && (
+                  <Nav.Link
+                    as={Link}
+                    to="/login"
+                    className="black-link mobile-login-link"
+                    onClick={handleNavClick}
+                  >
+                    LOGIN
+                  </Nav.Link>
                 )}
               </Nav>
-
-              <span className="nav-separator">|</span>
             </Navbar.Collapse>
 
-            {isLogged ? (
-              <div className="link-btn">
+            <div className="link-btn desktop-login-btn">
+              {isLogged ? (
                 <Link
                   to="/"
                   className="theme-btn btn-style-one"
@@ -93,14 +174,12 @@ export default function Header() {
                 >
                   LOG OUT
                 </Link>
-              </div>
-            ) : (
-              <div className="link-btn">
+              ) : (
                 <Link to="/login" className="theme-btn btn-style-one">
                   LOGIN
                 </Link>
-              </div>
-            )}
+              )}
+            </div>
           </Container>
         </Navbar>
       </header>

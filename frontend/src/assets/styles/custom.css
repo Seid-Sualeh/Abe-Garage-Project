@@ -27,7 +27,8 @@ textarea::placeholder {
 }
 /* Header */
 .main-header {
-  box-shadow: rgba(9, 30, 66, 0.25) 0px 2px 5px -2px,
+  box-shadow:
+    rgba(9, 30, 66, 0.25) 0px 2px 5px -2px,
     rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
 }
 /* Admin pages */
@@ -281,10 +282,9 @@ input:disabled {
   cursor: pointer;
 }
 
-.me-auto{
+.me-auto {
   font-weight: bold;
   margin-left: 230px;
-  
 }
 
 .black-link {
@@ -292,40 +292,181 @@ input:disabled {
   color: black !important;
 }
 
- @media screen and (max-width: 768px) {
-      .navbar-collapse.collapse {
-  background-color: rgba(0, 0, 0, 0.9); /* Dark semi-transparent background */
-  padding: 10px; /* Add some padding around the links */
-  border-radius: 5px; /* Rounded corners for the entire collapsed area */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
-}
+@media screen and (max-width: 768px) {
+  .navbar-collapse.collapse {
+    background-color: rgba(0, 0, 0, 0.9); /* Dark semi-transparent background */
+    padding: 10px; /* Add some padding around the links */
+    border-radius: 5px; /* Rounded corners for the entire collapsed area */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+  }
 
-.navbar-nav {
-  margin-left: 0;
-  text-align: left;
-}
+  .navbar-nav {
+    margin-left: 0;
+    text-align: left;
+  }
 
-.navbar-nav .nav-link {
-  background-color: #333; /* Slightly lighter background for the links */
-  color: white !important;
-  padding: 0.75rem 1rem;
-  border-radius: 20px; /* More rounded corners for a pill-like shape */
-  display: inline-block;
-  margin-bottom: 5px; /* Add spacing between links */
-  transition: background-color 0.3s ease; /* Smooth background color transition */
-  font-size: 1.1rem; /* Slightly larger font size */
-}
+  .navbar-nav .nav-link {
+    background-color: #333; /* Slightly lighter background for the links */
+    color: white !important;
+    padding: 0.75rem 1rem;
+    border-radius: 20px; /* More rounded corners for a pill-like shape */
+    display: inline-block;
+    margin-bottom: 5px; /* Add spacing between links */
+    transition: background-color 0.3s ease; /* Smooth background color transition */
+    font-size: 1.1rem; /* Slightly larger font size */
+  }
 
-.navbar-nav .nav-link:hover {
-  background-color: #555; /* Darker background on hover */
-}
+  .navbar-nav .nav-link:hover {
+    background-color: #555; /* Darker background on hover */
+  }
 
-/* Style the Navbar Toggle (Hamburger Menu) */
-.navbar-toggler {
-  border: none; /* Remove the border */
-}
+  /* Style the Navbar Toggle (Hamburger Menu) */
+  .navbar-toggler {
+    border: none; /* Remove the border */
+  }
 
-.navbar-toggler-icon {
-  background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba(255, 255, 255, 0.7)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e"); /* White hamburger icon */
-}
+  .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba(255, 255, 255, 0.7)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e"); /* White hamburger icon */
+  }
+
+  /* Login Form Responsive Styles */
+  .login-container {
+    padding: 30px 15px;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .login-header {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  .login-header h2 {
+    font-size: 28px;
+    color: #222;
+  }
+
+  .form-column.col-lg-7.col-md-10.col-sm-12 {
+    float: none;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 500px;
+  }
+
+  .login-container .contact-form {
+    background: #fff;
+    padding: 30px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+  }
+
+  .login-container .form-group {
+    margin-bottom: 20px;
+  }
+
+  .login-container input[type="text"],
+  .login-container input[type="email"],
+  .login-container input[type="password"] {
+    width: 100%;
+    padding: 12px 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+
+  .login-container .theme-btn {
+    width: 100%;
+    text-align: center;
+    padding: 15px 30px;
+  }
+
+  /* Mobile-specific styles */
+  @media screen and (max-width: 576px) {
+    .login-header h2 {
+      font-size: 22px;
     }
+
+    .login-container .contact-form {
+      padding: 20px 15px;
+    }
+
+    .login-container input[type="text"],
+    .login-container input[type="email"],
+    .login-container input[type="password"] {
+      padding: 10px 15px;
+      font-size: 14px;
+    }
+
+    .login-container .theme-btn {
+      padding: 12px 20px;
+      font-size: 14px;
+    }
+  }
+}
+
+/* Mobile header: show login in navbar, hide desktop button */
+@media screen and (max-width: 991px) {
+  .header-upper .link-btn {
+    display: none !important;
+  }
+
+  .mobile-login-link {
+    display: inline-block !important;
+  }
+}
+
+/* Desktop: hide mobile login link, show desktop button */
+@media screen and (min-width: 992px) {
+  .mobile-login-link {
+    display: none !important;
+  }
+
+  .desktop-login-btn {
+    display: block !important;
+  }
+}
+
+/* Mobile: show mobile admin link */
+@media screen and (max-width: 991px) {
+  .mobile-admin-link {
+    display: inline-block !important;
+  }
+
+  .desktop-admin-link {
+    display: none !important;
+  }
+}
+
+/* Logout button styling in navbar */
+.nav .logout-btn {
+  background-color: #ff4c00;
+  color: #fff !important;
+  padding: 8px 20px;
+  border-radius: 4px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.nav .logout-btn:hover {
+  background-color: #e04400;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Mobile: show mobile logout link, hide desktop logout */
+@media screen and (max-width: 991px) {
+  .mobile-logout-link {
+    display: inline-block !important;
+  }
+
+  .desktop-login-btn .theme-btn.btn-style-one {
+    display: none !important;
+  }
+}
+
+/* Desktop: hide mobile logout link, show desktop logout */
+@media screen and (min-width: 992px) {
+  .mobile-logout-link {
+    display: none !important;
+  }
+}
