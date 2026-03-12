@@ -7,7 +7,7 @@ const getAllServices = async () => {
       "Content-Type": "application/json",
     },
   };
-  const response = await fetch(`${api_url}/api/services`, requestOptions);
+  const response = await fetch(`${api_url}/admin/services`, requestOptions);
   return response.json();
 };
 

@@ -36,7 +36,7 @@ function CreateNewOrder() {
 
   const getServiceList = async () => {
     try {
-      const data = await serviceService.getServiceList();
+      const data = await serviceService.getAllServices();
 
       console.log("create order", data);
       setServices(data.data);
@@ -56,7 +56,8 @@ function CreateNewOrder() {
     }
 
     try {
-      const data = await customerService.singleCustomer(ID, token);
+      const response = await customerService.getCustomer(ID, token);
+      const data = await response.json();
       setCustomerInfo(data.customer);
     } catch (error) {
       console.error("Error ", error);
@@ -68,31 +69,33 @@ function CreateNewOrder() {
   }, [ID, token]);
 
   const fetchVehicleInfo = async () => {
+    if (!vID || !token) {
+      console.error("Missing vID or token");
+      return;
+    }
     try {
-      const response = await vehicleService.getVehicleInfo(vID, token);
-      console.log("vehicleService response:", response);
-      // Normalize possible response shapes:
-      // 1) service returns axios response.data -> { status, data }
-      // 2) service returns inner data object -> { vehicle_make, ... }
-      // 3) service returns axios response -> { data: { status, data } }
+      const response = await vehicleService.vehiclePerCustomer(vID, token);
+      console.log("Vehicle API response:", response);
+
+      // Handle different response formats
       let vehicleObj = null;
-      if (response && response.data && response.data.data) {
-        vehicleObj = response.data.data;
-      } else if (response && response.data && !response.data.data) {
+      if (response && response.status === "success" && response.data) {
         vehicleObj = response.data;
-      } else if (response && !response.data) {
+      } else if (response && response.data) {
+        vehicleObj = response.data;
+      } else if (response) {
         vehicleObj = response;
       }
 
       setVehicleInfo(vehicleObj);
     } catch (error) {
-      console.error("Error:", error);
+      console.error("Error fetching vehicle:", error);
     }
   };
 
   useEffect(() => {
     fetchVehicleInfo();
-  }, [vID]);
+  }, [vID, token]);
 
   const handleServiceSelection = (service_id) => {
     setSelectedServices((prevServices) => {

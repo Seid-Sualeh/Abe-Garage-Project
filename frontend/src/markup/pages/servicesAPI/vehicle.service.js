@@ -38,10 +38,12 @@ const vehiclePerCustomer = async (customer_id, token) => {
     },
   };
   const response = await fetch(
-    `${api_url}/api/vehicles/${customer_id}`,
+    `${api_url}/api/vehicle/${customer_id}`,
     requestOptions,
   );
-  return response.json();
+  const data = await response.json();
+  // Return the data directly based on the API response structure
+  return data;
 };
 
 const vehicleService = {

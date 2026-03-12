@@ -130,3 +130,46 @@
 
 @media only screen and (max-width: 350px) {
 }
+
+/* Fix for sec-title.style-two h2:before on mobile */
+@media only screen and (max-width: 991px) {
+  .sec-title.style-two h2:before,
+  .services-section .sec-title.style-two h2:before {
+    right: auto;
+    left: 0;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .sec-title.style-two h2:before,
+  .services-section .sec-title.style-two h2:before {
+    right: auto;
+    left: 0;
+    position: relative;
+    display: block;
+    margin-top: 10px;
+  }
+
+  .contact-section .contact-title h2:after {
+    right: 0px;
+  }
+
+  /* Table responsive fixes - Force all tables to be scrollable on mobile */
+  .table,
+  table,
+  .react-bootstrap-table,
+  .table-striped,
+  .table-bordered {
+    overflow-x: auto !important;
+    display: block;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .table thead,
+  .table tbody,
+  .table th,
+  .table td,
+  .table tr {
+    white-space: nowrap;
+  }
+}
